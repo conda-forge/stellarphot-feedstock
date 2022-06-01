@@ -1,5 +1,5 @@
 {% set name = "stellarphot" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stellarphot-{{ version }}.tar.gz
-  sha256: 846bae872f7180dd29da13bad9e475043fc342536a6e3dfb660bd1ecd007ce34
+  sha256: e5ea3208a6d3d32d9bd232a09af5feb5c0de2d845d1d64ffefe50646539d742e
 
 build:
   number: 0
@@ -21,7 +21,7 @@ requirements:
     - python >=3.7
     - setuptools-scm
   run:
-    - astropy >=4.3
+    - astropy >=5,<5.1
     - astroquery
     - astrowidgets
     - bottleneck
