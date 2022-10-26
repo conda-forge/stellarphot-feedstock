@@ -36,6 +36,7 @@ requirements:
     - pyyaml
     - batman-package
     - jsonschema <4,>=3.0.2
+    - ipyfilechooser
 
 test:
   imports:
