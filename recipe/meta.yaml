@@ -1,5 +1,5 @@
 {% set name = "stellarphot" %}
-{% set version = "1.1.3" %}
+{% set version = "1.1.4" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stellarphot-{{ version }}.tar.gz
-  sha256: e86b63515515ed98fac9fdb6a5ff587a69f42f346d9cfc1d0938c036cffd8318
+  sha256: 34d0148293bbc273786d225a898cc8d037b3913e80eda7bc3fc3cc4a05103c53
 
 build:
   number: 0
@@ -36,6 +36,7 @@ requirements:
     - pyyaml
     - batman-package
     - jsonschema <4,>=3.0.2
+    - ipyfilechooser
 
 test:
   imports:
