@@ -21,7 +21,7 @@ requirements:
     - python >=3.7
     - setuptools-scm
   run:
-    - astropy >=5,<5.1
+    - astropy >=5
     - astroquery
     - astrowidgets
     - bottleneck
@@ -37,6 +37,8 @@ requirements:
     - batman-package
     - jsonschema <4,>=3.0.2
     - ipyfilechooser
+    - aggdraw
+    - jupyterlab
 
 test:
   imports:
