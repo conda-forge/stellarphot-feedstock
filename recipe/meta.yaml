@@ -1,5 +1,5 @@
 {% set name = "stellarphot" %}
-{% set version = "1.4.7" %}
+{% set version = "1.4.8" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stellarphot-{{ version }}.tar.gz
-  sha256: b6bec91c30d29f3410077ffbd3ebd2bb75140ce89817fce3cb3aaa36f8a6008f
+  sha256: 1b9c9664e66c700b6fbebbccbb2be5edfa6314f700acc4f2e58cdb06efdba59e
 
 build:
   number: 0
