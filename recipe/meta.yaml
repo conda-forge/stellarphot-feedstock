@@ -26,7 +26,6 @@ requirements:
     - astrowidgets
     - bottleneck
     - ccdproc
-    - gatspy
     - ginga
     - ipywidgets
     - matplotlib-base
