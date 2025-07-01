@@ -18,20 +18,26 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools-scm
   run:
-    - astropy >=5
+    - astropy-base
     - astroquery
     - astrowidgets
     - bottleneck
     - ccdproc
     - ginga
+    - ipyautoui >=0.7.19
+    - ipyfilechooser
     - ipywidgets
+    - jupyter-app-launcher >=0.3.0
+    - lightkurve
     - matplotlib-base
+    - papermill
     - pandas
-    - photutils >=1
-    - python >=3.7
+    - photutils >=2
+    - pydantic >=2
+    - python >={{ python_min }}
     - pyyaml
     - batman-package
     - jsonschema <4,>=3.0.2
