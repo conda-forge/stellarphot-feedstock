@@ -1,14 +1,14 @@
 {% set name = "stellarphot" %}
-{% set version = "1.4.15" %}
-
+{% set version = "2.0.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stellarphot-{{ version }}.tar.gz
-  sha256: 73ff39d86f230a5fa7009f7267b8a46c47402adcb34d057ded4af8ac9930dd50
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stellarphot-{{ version }}.tar.gz
+  sha256: 8f656479333a9ba14c0afa2a55be2e6a837ff110c976ccda502c61546628b120
 
 build:
   number: 0
@@ -18,20 +18,27 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
-    - setuptools-scm
+    - python {{ python_min }}
+    - hatchling
+    - hatch-vcs
   run:
-    - astropy >=5
+    - astropy-base
     - astroquery
     - astrowidgets
     - bottleneck
     - ccdproc
     - ginga
+    - ipyautoui >=0.7.19
+    - ipyfilechooser
     - ipywidgets
+    - jupyter_app_launcher >=0.3.0
+    - lightkurve
     - matplotlib-base
+    - papermill
     - pandas
-    - photutils >=1
-    - python >=3.7
+    - photutils >=2
+    - pydantic >=2
+    - python >={{ python_min }}
     - pyyaml
     - batman-package
     - jsonschema <4,>=3.0.2
@@ -42,17 +49,17 @@ requirements:
 test:
   imports:
     - stellarphot
-    - stellarphot.analysis
   commands:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/stellarphot/stellarphot
   summary: A package for performing stellar photometry.
   license: BSD-3-Clause
-  license_file: licenses/LICENSE.rst
+  license_file: LICENSE.rst
 
 extra:
   recipe-maintainers:
