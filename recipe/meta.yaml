@@ -49,7 +49,6 @@ requirements:
 test:
   imports:
     - stellarphot
-    - stellarphot.analysis
   commands:
     - pip check
   requires:
