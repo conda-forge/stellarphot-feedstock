@@ -60,7 +60,7 @@ about:
   home: https://github.com/stellarphot/stellarphot
   summary: A package for performing stellar photometry.
   license: BSD-3-Clause
-  license_file: licenses/LICENSE.rst
+  license_file: LICENSE.rst
 
 extra:
   recipe-maintainers:
