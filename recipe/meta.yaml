@@ -24,7 +24,7 @@ requirements:
   run:
     - astropy-base
     - astroquery
-    - astrowidgets
+    - astrowidgets <0.4.0
     - bottleneck
     - ccdproc
     - ginga
