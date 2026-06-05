@@ -41,7 +41,7 @@ requirements:
     - pydantic >=2
     - python >={{ python_min }}
     - pyyaml
-    - batman-package
+    # - batman-package
     - jsonschema <4,>=3.0.2
     - ipyfilechooser
     - aggdraw
