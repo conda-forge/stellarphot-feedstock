@@ -1,6 +1,6 @@
 {% set name = "stellarphot" %}
-{% set version = "2.0.3" %}
-{% set python_min = "3.11" %}
+{% set version = "2.0.4" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stellarphot-{{ version }}.tar.gz
-  sha256: d0a699e6312ae7a2048e5d5115fa2bea33d20f81af37d9b1d00b07e56193ab20
+  sha256: 1b728a3e044b198917f394b84c6a39da46f72abd9316bff5227e2bd60d78bd4f
 
 build:
   number: 0
@@ -22,9 +22,12 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - astropy-base
+    - astropy-base >=5
     - astroquery
     - astrowidgets <0.4.0
+    # not an upstream dependency, but conda-forge astrowidgets is missing
+    # it while its pip metadata requires it
+    - aggdraw
     - bottleneck
     - ccdproc
     - ginga
@@ -36,23 +39,22 @@ requirements:
     - matplotlib-base
     - papermill
     - pandas
-    - photutils >=2
+    - photutils >=2,<3
+    - platformdirs
     - pydantic >=2
     - python >={{ python_min }}
     - pyyaml
-    - batman-package
-    - jsonschema <4,>=3.0.2
-    - ipyfilechooser
-    - aggdraw
+    - regions
     - jupyterlab
 
 test:
   imports:
     - stellarphot
-  commands:
-    - pip check
+  # pip check is disabled for now: lightkurve -> oktopus pins numpy <2,
+  # while current imagecodecs/rasterio builds (pulled in transitively via
+  # ccdproc and photutils) declare numpy >=2 in their pip metadata, so
+  # pip check cannot pass until oktopus is dropped from lightkurve.
   requires:
-    - pip
     - python {{ python_min }}
 
 about:
