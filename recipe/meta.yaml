@@ -22,7 +22,7 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - astropy-base
+    - astropy-base >=5
     - astroquery
     - astrowidgets <0.4.0
     - bottleneck
@@ -34,17 +34,14 @@ requirements:
     - jupyter_app_launcher >=0.3.0
     - lightkurve
     - matplotlib-base
-    - numpy >=2
     - papermill
     - pandas
-    - photutils >=2
+    - photutils >=2,<3
+    - platformdirs
     - pydantic >=2
     - python >={{ python_min }}
     - pyyaml
-    # - batman-package
-    - jsonschema <4,>=3.0.2
-    - ipyfilechooser
-    - aggdraw
+    - regions
     - jupyterlab
 
 test:
