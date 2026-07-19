@@ -3,7 +3,7 @@ About stellarphot-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/stellarphot-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/stellarphot/stellarphot
+Home: https://github.com/feder-observatory/stellarphot
 
 Package license: BSD-3-Clause
 
