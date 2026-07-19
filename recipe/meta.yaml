@@ -1,5 +1,5 @@
 {% set name = "stellarphot" %}
-{% set version = "2.0.4" %}
+{% set version = "2.1.1" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stellarphot-{{ version }}.tar.gz
-  sha256: 1b728a3e044b198917f394b84c6a39da46f72abd9316bff5227e2bd60d78bd4f
+  sha256: feaaf70557c1bf0f57f4689928b180b2e161b3159dab53416532355ed32cfc63
 
 build:
   number: 0
@@ -25,9 +25,6 @@ requirements:
     - astropy-base >=5
     - astroquery
     - astrowidgets <0.4.0
-    # not an upstream dependency, but conda-forge astrowidgets is missing
-    # it while its pip metadata requires it
-    - aggdraw
     - bottleneck
     - ccdproc
     - ginga
@@ -35,7 +32,7 @@ requirements:
     - ipyfilechooser
     - ipywidgets
     - jupyter_app_launcher >=0.3.0
-    - lightkurve
+    - lightkurve >=2.6.0
     - matplotlib-base
     - papermill
     - pandas
@@ -43,6 +40,8 @@ requirements:
     - platformdirs
     - pydantic >=2
     - python >={{ python_min }}
+    - pytransit
+    - lmfit
     - pyyaml
     - regions
     - jupyterlab
@@ -50,15 +49,13 @@ requirements:
 test:
   imports:
     - stellarphot
-  # pip check is disabled for now: lightkurve -> oktopus pins numpy <2,
-  # while current imagecodecs/rasterio builds (pulled in transitively via
-  # ccdproc and photutils) declare numpy >=2 in their pip metadata, so
-  # pip check cannot pass until oktopus is dropped from lightkurve.
+  commands:
+    - pip check
   requires:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/stellarphot/stellarphot
+  home: https://github.com/feder-observatory/stellarphot
   summary: A package for performing stellar photometry.
   license: BSD-3-Clause
   license_file: LICENSE.rst
