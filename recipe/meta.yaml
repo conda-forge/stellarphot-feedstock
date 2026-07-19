@@ -27,7 +27,6 @@ requirements:
     - astrowidgets <0.4.0
     # not an upstream dependency, but conda-forge astrowidgets is missing
     # it while its pip metadata requires it
-    - aggdraw
     - bottleneck
     - ccdproc
     - ginga
@@ -35,7 +34,7 @@ requirements:
     - ipyfilechooser
     - ipywidgets
     - jupyter_app_launcher >=0.3.0
-    - lightkurve
+    - lightkurve >=2.6.0
     - matplotlib-base
     - papermill
     - pandas
@@ -43,6 +42,8 @@ requirements:
     - platformdirs
     - pydantic >=2
     - python >={{ python_min }}
+    - pytransit
+    - lmfit
     - pyyaml
     - regions
     - jupyterlab
@@ -58,7 +59,7 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/stellarphot/stellarphot
+  home: https://github.com/feder-observatory/stellarphot
   summary: A package for performing stellar photometry.
   license: BSD-3-Clause
   license_file: LICENSE.rst
