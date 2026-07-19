@@ -55,6 +55,8 @@ test:
   # while current imagecodecs/rasterio builds (pulled in transitively via
   # ccdproc and photutils) declare numpy >=2 in their pip metadata, so
   # pip check cannot pass until oktopus is dropped from lightkurve.
+  commands:
+    - pip check
   requires:
     - python {{ python_min }}
 
